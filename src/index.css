@@ -1,0 +1,162 @@
+/* BASIC RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL STYLES */
+body {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+input {
+  font-family: inherit;
+}
+
+header form {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+form .searched-movie {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: solid 1px black;
+  width: 100%;
+}
+
+.loading-message,
+.error {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID CONTAINER TO RECEIVE ALL MOVIES */
+
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* MOVIE CARD STRUCTURE */
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie .movie-title {
+  width: 80%;
+  font-size: 0.8rem;
+  color: gray;
+  font-weight: 400;
+  margin: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: solid 1px rgb(226, 223, 223);
+}
+
+.movie .release-date {
+  color: rgb(138, 136, 136);
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* MOVIE DETAILS PAGE */
+
+.movie-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image-container {
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 500px;
+}
+
+.details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0 0 0;
+}
+
+.overview {
+  margin-top: 1rem;
+}
+
+.go-back {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 640px) {
+  .movies-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .movie-details-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    max-width: 800px;
+  }
+
+  .image-container {
+    width: 50%;
+  }
+
+  .details-container {
+    width: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 0 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .movies-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .movies-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
